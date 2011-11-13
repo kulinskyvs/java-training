@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="training" default="compile" basedir=".">
+    
+    <property environment="env"/>
+    <property name="dir.source"  value="source"/>
+    <property name="dir.classes" value="classes"/>
+    <property name="dir.docs"    value="docs"/>
+
+    <target name="clean">
+       <echo message="Cleaning the compiled classes"/>
+       <delete dir="${dir.classes}"/>
+       <mkdir dir="${dir.classes}"/>  
+    </target>
+
+    <target name="compile"
+            depends="clean"
+            description="Compiling training java source files">
+        <echo message="Compiling training java source files"/>
+
+        <javac srcdir="${dir.source}"
+                destdir="${dir.classes}"
+                includeantruntime="on"
+                debug="on"
+                deprecation="on" />
+    </target>
+    
+    <target name="docs"
+            depends="compile"
+            description="Create complete Javadoc documentation">
+
+       <mkdir dir="${dir.classes}"/>
+       <mkdir dir="${dir.docs}"/>       
+
+       <javadoc sourcepath="${dir.source}/java" 
+                destdir="${dir.docs}"
+                windowtitle="training"
+                source="1.6"
+                author="true"
+                version="true"
+                use="true"
+                packagenames="*">
+           <doctitle><![CDATA[<h1>Java training (preparation for OJCP exam)/h1>]]></doctitle>
+	   <bottom><![CDATA[<i>Vadim Kulinski, 2011.</i>]]></bottom>
+	</javadoc>
+    </target>
+
+</project>
