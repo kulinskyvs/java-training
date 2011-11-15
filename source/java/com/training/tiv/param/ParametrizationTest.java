@@ -50,10 +50,16 @@ public class ParametrizationTest {
      print("  3.2 "+testExtendsMeta(appleContainer, new Macintosh("mac2")) );  //possible since Macintosh extends Apple
      print("  3.3 "+testExtendsMeta(appleContainer, new Orange("orange2")) );
      
-     print("4. test super meta symbol");
-     print("  3.1 "+testSuperMeta(appleContainer, new Apple("app3")) );
-     print("  3.2 "+testSuperMeta(appleContainer, new Macintosh("mac3")) );
+     print("4. test super meta symbol for apple container");
+     print("  4.1 "+testSuperMeta(appleContainer, new Apple("app3")) );
+     print("  4.2 "+testSuperMeta(appleContainer, new Macintosh("mac3")) );
      //print("  3.3 "+testSuperMeta(appleContainer, new Orange("orange1")) ); //not possible since Orange is not actuallt an apple    
+     
+     GenericContainer<? super Macintosh> macSuperContainer = new SimpleContainer<Macintosh>();
+     macSuperContainer.set(new Macintosh("mac5"));
+     macSuperContainer = new SimpleContainer<Apple>(); //it's possible since <? extends Macintosh> is used
+     macSuperContainer.set((Macintosh)new Apple("app5")); //type cast is required, but runtime exception ClassCastException will be thrown !!!
+     
      
   
   }
