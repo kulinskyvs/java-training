@@ -7,7 +7,7 @@ public class Macintosh extends Apple {
    }
    
    protected String getType() {
-      return "apple macintosh";
+      return "{macintosh}";
    }
     
 }

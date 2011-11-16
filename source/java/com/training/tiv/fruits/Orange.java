@@ -7,7 +7,7 @@ public class Orange extends Fruit {
    }
    
    protected String getType() {
-      return "orange";
+      return "{orange}";
    } 
  
 }

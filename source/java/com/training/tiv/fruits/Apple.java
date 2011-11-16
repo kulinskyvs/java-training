@@ -7,6 +7,10 @@ public class Apple extends Fruit{
    }
    
    protected String getType() {
-      return "apple";
+      return "{apple}";
+   }
+   
+   public void someMethodFromApple() {
+     System.out.println("   "+this+" from someMethodFromApple()");
    }
 }
