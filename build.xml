@@ -23,6 +23,10 @@
                 includeantruntime="on"
                 debug="on"
                 deprecation="on" />
+                
+        <copy todir="${dir.classes}">
+            <fileset dir="${dir.source}/java" excludes="**/*.java"/>
+        </copy>
     </target>
     
     <target name="docs"
