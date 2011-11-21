@@ -218,7 +218,7 @@ public class SerializationTest {
     print("--------------------------------------------------------------");
     
     
-    print("\n4. test object reference rstoring from different serialization resources");
+    print("\n4. test object reference restoring from different serialization resources");
     List<SerializableObject> objects = new ArrayList<SerializableObject>(Arrays.asList(
        new SerializableObject(), new SerializableObject(),
        new SerializableObject(), new SerializableObject() )) {
