@@ -5,18 +5,19 @@ import java.util.concurrent.locks.*;
 
 abstract class SomeTask implements Runnable {
 
-  private static final int ATTEMPTS_NUMBER = 1000;
+  private static final int ATTEMPTS_NUMBER = 1000000;
   
   protected abstract void doTask();
   protected abstract String getName();
   
   public void run () {
-    long start = System.nanoTime();
+    long start = System.currentTimeMillis();
     for (int i = 0 ; i < ATTEMPTS_NUMBER ; i++)
        doTask();
-    long delta = System.nanoTime() - start;
-    System.out.println("thread ["+getName()+"] finished in "+
-       TimeUnit.NANOSECONDS.convert(delta, TimeUnit.SECONDS)) ;
+    long delta = System.currentTimeMillis() - start;
+//    System.out.println("thread ["+getName()+"] finished in "+
+//       TimeUnit.NANOSECONDS.convert(delta, TimeUnit.SECONDS)) ;
+    System.out.println("thread ["+getName()+"] finished in "+delta);
   }
   
   protected void sleep() {
