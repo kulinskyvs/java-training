@@ -8,6 +8,8 @@ import com.training.tiv.io.*;
 import com.training.tiv.concurrent.*;
 import com.training.tiv.boxing.*;
 import com.training.tiv.varargs.*;
+import com.training.tiv.annotation.*;
+import com.training.tiv.enumeration.*;
 
 public class TestLauncher {
 	public static void main(String[] args) throws Throwable{
@@ -37,7 +39,13 @@ public class TestLauncher {
 	  AutoBoxingTest.main(args);
 	  
 	  System.out.println("\n\n>>>>>>>>>>>>>>>>>>>>>>>>> varargs tests <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-	  VarArgsTest.main(args);		
+	  VarArgsTest.main(args);
+	  
+	  System.out.println("\n\n>>>>>>>>>>>>>>>>>>>>>>>>> annotation tests <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+	  AnnoTest.main(args);
+	  
+ 	  System.out.println("\n\n>>>>>>>>>>>>>>>>>>>>>>>>> enumeration tests <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+	  EnumTest.main(args);								
 	  
 	}
 }
