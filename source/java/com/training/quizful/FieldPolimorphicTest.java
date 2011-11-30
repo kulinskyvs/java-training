@@ -1,23 +1,26 @@
 package com.training.quizful;
 
 class ClassA {
-	int value = 3;
+    int value = 3;
 	
     public void addValue(int x) {
     	this.value += x;
     }
     
-	public int getValue() {
-		 return value;
-	}
-	
+    public int getValue() {
+	 return value;
+    }
 }
 
 public class FieldPolimorphicTest extends ClassA {
-	int value = 8;
+    int value = 8;
 	
-	public void addValue(int x) {
+    public void addValue(int x) {
     	this.value += x;
+    }
+    
+    public int getValue() {
+	 return value;
     }
     
     public static void main(String ...args) {
