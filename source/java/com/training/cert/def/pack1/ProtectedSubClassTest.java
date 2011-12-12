@@ -18,6 +18,9 @@ public class ProtectedSubClassTest extends ProtectedSuperClassTest {
       //Only "INHERITANCE access method" is available
       //ProtectedSuperClassTest subClassObj = new ProtectedSubClassTest();
       //System.out.println(" from main:"+subClassObj.getValue());
+
+      //this access method is available since the variable is declared as ProtectedSubClassTest type
+      System.out.println(" from main (access to protected variable):"+subClassObj.getValue());
       
       
       ProtectedSubClassTest subClassObj2 = new ProtectedSubClassTest();
